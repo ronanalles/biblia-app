@@ -2,6 +2,10 @@
 
 Uma aplicação web progressiva, mobile-first, criada para tornar a leitura bíblica simples, serena e agradável.
 
+## Acessar
+
+[Abrir o Inspire o Reino — Bíblia](https://ronanalles.github.io/biblia-app/)
+
 ## Recursos
 
 - Leitor responsivo com navegação entre os 66 livros e capítulos
