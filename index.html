@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f4ed" />
+  <meta name="description" content="Inspire o Reino — uma experiência de leitura bíblica serena, moderna e acessível." />
+  <title>Inspire o Reino — Bíblia</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-view="home" aria-label="Ir para o início">
+        <span class="brand-mark">IR</span>
+        <span><strong>Inspire o Reino</strong><small>Bíblia</small></span>
+      </button>
+      <div class="top-actions">
+        <button class="icon-btn" id="searchButton" aria-label="Pesquisar"><span>⌕</span></button>
+        <button class="avatar" id="settingsButton" aria-label="Preferências">RA</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="view active" id="homeView">
+        <div class="greeting">
+          <p id="greetingText">Boa tarde</p>
+          <h1>Que a Palavra encontre<br />espaço em você.</h1>
+        </div>
+
+        <article class="continue-card" id="continueCard">
+          <div class="continue-copy">
+            <span class="eyebrow">CONTINUE SUA LEITURA</span>
+            <h2 id="continueTitle">João 3</h2>
+            <p id="continueExcerpt">Porque Deus amou o mundo de tal maneira...</p>
+            <div class="progress-row"><span><i id="continueProgress"></i></span><small id="continuePercent">35%</small></div>
+          </div>
+          <button class="play-btn" aria-label="Continuar leitura">›</button>
+        </article>
+
+        <section class="daily-section">
+          <div class="section-head"><div><span class="eyebrow">PALAVRA DO DIA</span><h2>Para guardar no coração</h2></div><button class="icon-btn" id="shareDaily" aria-label="Compartilhar">↗</button></div>
+          <blockquote>
+            <span class="quote-mark">“</span>
+            <p>O Senhor é o meu pastor; nada me faltará.</p>
+            <cite>Salmos 23:1 · Almeida</cite>
+          </blockquote>
+        </section>
+
+        <section class="quick-section">
+          <div class="section-head"><h2>Seu caminho</h2><button class="text-btn" data-view="plans">Ver todos</button></div>
+          <div class="quick-grid">
+            <button class="quick-card amber" data-view="plans"><span class="quick-icon">☼</span><strong>Planos</strong><small>2 em andamento</small></button>
+            <button class="quick-card blue" data-view="saved"><span class="quick-icon">♡</span><strong>Salvos</strong><small id="savedCount">0 versículos</small></button>
+          </div>
+        </section>
+      </section>
+
+      <section class="view reader-view" id="readerView">
+        <div class="reader-toolbar">
+          <button class="chapter-picker" id="chapterPicker"><span id="readerBook">João</span> <strong id="readerChapter">3</strong>⌄</button>
+          <div><button class="icon-btn" id="fontButton" aria-label="Ajustar texto">Aa</button><button class="icon-btn" id="readerMenu" aria-label="Mais opções">•••</button></div>
+        </div>
+        <div class="reading-progress"><i id="readingProgress"></i></div>
+        <article class="scripture" id="scripture" tabindex="0" aria-live="polite"></article>
+        <div class="chapter-nav"><button id="prevChapter">‹ <span>Anterior</span></button><button id="nextChapter"><span>Próximo</span> ›</button></div>
+      </section>
+
+      <section class="view" id="savedView">
+        <div class="page-title"><span class="eyebrow">SUA JORNADA</span><h1>Versículos salvos</h1><p>Palavras que você quer levar consigo.</p></div>
+        <div class="saved-list" id="savedList"></div>
+      </section>
+
+      <section class="view" id="plansView">
+        <div class="page-title"><span class="eyebrow">UM PASSO POR DIA</span><h1>Planos de leitura</h1><p>Ritmos leves para criar constância.</p></div>
+        <div class="plan-list">
+          <article class="plan-card sunrise"><div><span>7 DIAS</span><h2>Recomeçar com esperança</h2><p>5 de 7 dias concluídos</p><div class="mini-progress"><i style="width:71%"></i></div></div><b>71%</b></article>
+          <article class="plan-card calm"><div><span>21 DIAS</span><h2>Uma vida de sabedoria</h2><p>3 de 21 dias concluídos</p><div class="mini-progress"><i style="width:14%"></i></div></div><b>14%</b></article>
+          <article class="plan-card sage"><div><span>30 DIAS</span><h2>Conhecendo Jesus</h2><p>Comece hoje</p></div><button>Iniciar</button></article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="active" data-view="home"><span>⌂</span><small>Início</small></button>
+      <button data-view="reader"><span>▤</span><small>Ler</small></button>
+      <button data-view="plans"><span>◷</span><small>Planos</small></button>
+      <button data-view="saved"><span>♡</span><small>Salvos</small></button>
+    </nav>
+  </div>
+
+  <dialog class="sheet" id="bookSheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head"><div><span class="eyebrow">NAVEGAR</span><h2>Escolha o livro</h2></div><button class="icon-btn close-sheet">×</button></div>
+    <div class="testament-tabs"><button class="active" data-testament="old">Antigo Testamento</button><button data-testament="new">Novo Testamento</button></div>
+    <div class="book-list" id="bookList"></div>
+    <div class="chapter-list" id="chapterList"></div>
+  </dialog>
+
+  <dialog class="sheet compact" id="fontSheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head"><h2>Aparência da leitura</h2><button class="icon-btn close-sheet">×</button></div>
+    <label>Tamanho do texto <output id="fontOutput">20px</output></label>
+    <input type="range" id="fontRange" min="16" max="28" value="20" />
+    <label>Entrelinha <output id="lineOutput">1.8</output></label>
+    <input type="range" id="lineRange" min="15" max="22" value="18" />
+    <div class="theme-options"><button class="active" data-theme="light">Claro</button><button data-theme="sepia">Sépia</button><button data-theme="dark">Escuro</button></div>
+  </dialog>
+
+  <dialog class="sheet compact" id="searchSheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head"><h2>Buscar na Bíblia</h2><button class="icon-btn close-sheet">×</button></div>
+    <form id="searchForm"><input id="searchInput" placeholder="Ex.: João 3:16" autocomplete="off" /><button>Buscar</button></form>
+    <p class="helper">Digite uma referência bíblica. A busca abre diretamente o capítulo correspondente.</p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
