@@ -1,10 +1,22 @@
 {
   "name": "Inspire o Reino — Bíblia",
   "short_name": "Inspire",
-  "description": "Uma experiência de leitura bíblica serena, moderna e acessível.",
+  "description": "Leia, ouça, destaque e guarde a Bíblia todos os dias.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f8f6f0",
   "theme_color": "#3f6655",
-  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+  "categories": ["books", "education", "lifestyle"],
+  "lang": "pt-BR",
+  "orientation": "any",
+  "icons": [
+    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"},
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ],
+  "shortcuts": [
+    {"name":"Continuar leitura","short_name":"Continuar","url":"./?ref=JHN-3","icons":[{"src":"icon-192.png","sizes":"192x192"}]},
+    {"name":"Buscar na Bíblia","short_name":"Buscar","url":"./?view=search","icons":[{"src":"icon-192.png","sizes":"192x192"}]}
+  ]
 }

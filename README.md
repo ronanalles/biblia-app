@@ -6,17 +6,21 @@ Uma aplicação web progressiva, mobile-first, criada para tornar a leitura bíb
 
 [Abrir o Inspire o Reino — Bíblia](https://ronanalles.github.io/biblia-app/)
 
-## Recursos
+## Recursos da versão 2
 
-- Leitor responsivo com navegação entre os 66 livros e capítulos
+- Leitor responsivo com navegação por seletor, gestos e teclado
 - Texto em português carregado sob demanda pela API pública bible-api.com
-- Ajustes de fonte, entrelinha e temas claro, sépia e escuro
-- Versículos salvos no dispositivo
+- Cache de até 80 capítulos e abertura offline
+- Áudio por síntese de voz com velocidade configurável
+- Destaques em quatro cores, favoritos e anotações
+- Biblioteca com filtros e exportação de backup
+- Busca por referência, temas e texto dos capítulos acessados
+- Quatro planos de leitura com progresso real
+- Ajustes de fonte, entrelinha, alta legibilidade e três temas
 - Continuidade automática da última leitura
-- Busca rápida por referência bíblica
-- Planos de leitura e palavra do dia
-- Instalável como PWA e interface acessível por teclado
-- Cache da interface para abertura offline
+- Palavra do dia dinâmica e estatísticas pessoais
+- Instalável como PWA, atalhos e ícones para Android/iOS
+- Interface acessível, indicador offline e manutenção de tela ativa
 
 ## Executar localmente
 
